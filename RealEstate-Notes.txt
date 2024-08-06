@@ -22,6 +22,21 @@ git repository setup
 Example:
 git init
 
+2) set user email and user name global
+Example:
+git config --global user.email "shaikkashif73@gmail.com"
+  git config --global user.name "shaikkashif73"
+
+
+3) Commit to git
+Example:
+git commit -m "install react js and tailwind css and create the first template
+
+
+4) 
+
+******step-4********
+create pages and routes
 
 
 
