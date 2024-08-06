@@ -1,0 +1,27 @@
+MERN Stack Project: Build a Modern Real Estate Marketplace with react MERN (jwt, redux toolkit)
+URL : https://youtu.be/VAaUy_Moivw?si=OMFzp8KfgIJmPNzU
+
+shaikkashif73@gmail.com
+shaikkashif1000@gmail.com
+
+****Step-1****
+Install React
+Install Tailwind css
+
+***Step-2**
+Install the Extension
+
+***Step-3****
+git repository setup
+1) Git credentials
+   user = shaikkashif73@gmail.com
+   password = gitKashif@123
+   username = shaikkashif73
+   
+1) git init in terminal 
+Example:
+git init
+
+
+
+
