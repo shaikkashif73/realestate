@@ -1,0 +1,33 @@
+****Step-1******
+1) npm create vite@latest
+2) Deleted all content from App.jsx
+
+****Step-2*****
+1) React Hooks : React Hooks are functions that allow you to use state and other react features in functional components. its doing state management
+
+2) Types of React Hooks : useState, useEffect, useReducer, useRef,useContext, 
+
+****Step-3****
+1) import the useSate in App.jsx
+   Example :
+import { useState } from 'react';
+
+2) Declare useState in page load.
+   Example :
+    const [counter, setCounter] = useState(0);
+
+3) Write incrementCounter function to increase the counter value by 1 . Call the setCounter function and adding 1 to it.
+   Example:
+    const incrementCounter = () => {
+    setCounter(counter + 1);
+  }
+4) Calling incrementCounter function in button click event.
+   Example :
+   <button onClick={incrementCounter} >Increment</button>
+
+5) Show the counter variable value in h2 tag .
+Example :
+<h1>Counter : {counter}</h1>
+
+
+*******************

@@ -1,0 +1,44 @@
+
+import { useRef } from "react";
+import "./Login.css"
+
+const Login = () => {
+    const nameRef = useRef(null)
+    const passRef = useRef(null)
+
+    const handleForm = (e) => {
+        e.preventDefault()
+        console.log("user",nameRef.current.value)
+        console.log("pass", passRef.current.value)
+
+    }
+
+    return (
+        <div className="login-container">
+            <h2>Login</h2>
+            <form onSubmit={handleForm}>
+                <div className="form-group">
+                    <label htmlFor="username">Username</label>
+                    <input
+                        type="text"
+                        name="username"
+                        required
+                        ref={nameRef}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        required
+                        ref={passRef}
+                    />
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    );
+};
+
+export default Login;

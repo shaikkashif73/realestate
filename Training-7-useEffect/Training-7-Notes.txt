@@ -1,0 +1,125 @@
+***Step-1****
+1) npm create vite@latest
+2) cd client
+   npm install
+   npm run dev
+3) Removed content form App.jsx.
+
+****Step-2****
+1) We are understanding the SideEffect.
+2) We are connecting to Another another backend server.
+
+3) Fetch Data from another server connnecting API.
+Example :
+ const [user, setUser] = useState("")
+
+ const fetchData = async () => {
+    const res = await fetch("https://randomuser.me/api")
+    const data = await res.json();
+    const jsonString = JSON.stringify(data);
+    setUser(jsonString);
+  }
+  fetchData();
+
+4) Displayin the in the html 
+return (
+    <>
+      {user}
+    </>
+  )
+
+  5) Data is displaying, but the problem is rerendering continously , it will crash the browser.
+
+  6) To control the continous re-rendering problem, we use useEffect.
+
+******Step-4************
+ 1) Syntax of useEffect
+   Example:
+   useEffect(()=>{
+    
+  },[])
+
+  2) Bring the fetchData function under the useEffect syntax:
+  Example :
+  useEffect(()=>{
+    const fetchData = async () => {
+      const res = await fetch("https://randomuser.me/api")
+      const data = await res.json();
+      const jsonString = JSON.stringify(data);
+      setUser(jsonString);
+    }
+    fetchData();
+  },[])
+
+
+****Step-5************
+1) Create Counter.jsx file.
+2) import useState, useEffect in counter.jsx
+   Example: 
+   import { useState, useEffect } from 'react'
+3) In Counter.jsx Add in html
+Example:
+return (
+        <>
+            <h1> Counter</h1>
+            <h2>{count1}</h2>
+            <button onClick={()=> setCount1(count1+1)}>Increment</button>
+
+            <h2>{count2}</h2>
+            <button onClick={()=> setCount2(count2+1)}>Increment</button>
+        </>
+
+4) Take the function useEffect
+Example:
+useEffect(()=> {
+
+    },[])
+
+5) In Counter.jsx include the console log in the useEffect Function
+Example :
+ useEffect(() => {
+        console.log("useEffect called ")
+    }, [])
+
+6) In Counter.jsx add count1 dependency, it will re-render continously.
+Example :
+useEffect(() => {
+        console.log("useEffect called ")
+    },[count1])
+
+7) Understanding the Execution of Code. useEffect execution will be last.
+Example :
+    console.log("Render Out-1");
+
+    useEffect(() => {
+        console.log("useEffect called ")
+    },[count1])
+    console.log("Render Out-2");
+    console.log("Render Out-3");
+
+****Step-6***************
+1) How to use the Cleanup Function in useEffect.
+
+2) Create the Cleanup.jsx and call in App.jsx
+
+3) How you can reset the value of count under useEffect
+Example :
+ useEffect(() => {
+        console.log("Cleaning the mess of useEffect")
+        console.log("Counter : " + count)
+        setCount(0);       
+    }, [count])
+
+4) We will do with EventListner function.
+Example :
+const clicker = () => {
+            console.log("Clicker function called")
+        }
+
+        document.body.addEventListener("click", clicker)
+
+        return () => {
+            document.body.removeEventListener("click", clicker)
+        }
+
+*******************************

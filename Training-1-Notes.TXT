@@ -1,0 +1,194 @@
+Step-1 : Install Extension of Live Server
+
+Step-2 : Created index.html
+            type  ! 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <title>Kinky Cat</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+Step: 3
+Create css folder
+create main.css
+
+Step-4: 
+   given link in index.html file
+<link rel="stylesheet" href="css/main.css">
+
+Step-5:
+Create a div
+<div>
+
+ </div>
+
+Step-5
+<Header>
+  </Header>
+
+Step-6:
+<div class="header-left">
+                <a href="subpage.html"><img src="logo.svg" alt=""></a>
+
+                <div class="divider"></div>
+                <div>Home</div>
+                
+            </div>
+
+
+Step-7 :
+ <nav>
+                <a href=""><img src="close.svg" alt="Close Menu"></a>
+                <ul>
+                    <a href="#">
+                        <li>Our Food</li>
+                    </a>
+                    <a href="#">
+                        <li>Ingredients</li>
+                    </a>
+                    <a href="#">
+                        <li>Studies</li>
+                    </a>
+                    <a href="#">
+                        <li>FAQ</li>
+                    </a>
+
+                </ul>
+
+            </nav>
+
+
+
+
+Step:8
+<main>
+            <h1>Your cat will go <img src="bonkers.svg" alt="Test will say bonkers"></h1>
+            <p class="subhead">...for the world's best testing cat food,sourced with only the finest Ingredients. Made with love, from the heart of MISSISSPPI </p>
+
+            <a href="#" class="primary-cta">Get Bonkers</a>
+        </main>
+
+        <div  class="cat-container">
+            <div class="cat">
+                <img src="cat.png" alt="">
+                <div class="inner-circle"></div>
+                <div class="outer-circle"></div>
+            </div>
+        </div>
+
+
+Step:9
+
+In main.css
+body {
+    background: #FFFBF3;
+    margin: 0;
+}
+
+Step:10
+Google.com , search for google fonts url = https://fonts.google.com/
+search for inter font
+select the text of that font and click get Font
+Click Embedded Code, Copy web fonts links and paste in index.html header section
+
+
+Step:11
+ Add the font-famil in main.css
+
+body {
+    background: #FFFBF3;
+    margin: 0;
+    font-family: 'Inter';
+}
+
+
+Step:12
+css units , there are different types of units , units use for sizes, to increase and decrease.
+
+Different Type of units
+em
+rem
+px
+
+
+Step-13
+Now to work on header section
+to bring the Friskay logo & nav (Menu) used flex
+
+header {
+   display: flex;
+   justify-content: space-between;
+
+}
+
+Step:14
+This is for setting the nav,ul & li
+nav ul {
+    background: white;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    margin: 0;
+    list-style: none;
+    width: 40%;
+    text-align: right;
+    padding: 2em;
+
+    li {
+        margin: 2em 0;
+    }
+}
+
+
+Step:15
+Add under nav, this is to set the font color, font size and font bold
+
+a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+
+Step:16
+
+
+Step:17
+
+
+Step:18
+
+
+Step:19
+
+
+Step:20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

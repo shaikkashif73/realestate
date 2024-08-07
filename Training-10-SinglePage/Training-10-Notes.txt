@@ -1,0 +1,170 @@
+*****Step-1*****
+1) npm create vite@latest
+2) cd client
+3) npm install
+4) npm run dev
+5) removed unnecessary content
+
+****Step-2****
+1) Create Home.jsx
+2) Create Course.jsx
+3) Call the Course page in Home.jsx use "a" tag element
+Example :
+return (
+        <>
+            <h1>Home</h1>
+            <a href="/course">Course</a>
+        </>
+    )
+
+
+***Step-3******
+1) Install the single page 
+2) npm install react-router-dom
+3) After installation , it will register in package.json dependencies
+"dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.25.1"
+  }
+
+***Step-4*****
+1) Import the RouterProvider in App.jsx
+Example:
+import { Link } from "react-router-dom"
+
+2) Declare router in App.jsx
+Example:
+const router = createBrowserRouter([
+  {path:"/",element:<Home/>},
+  {path:"/course",element:<Course/>}
+])
+
+3)Call the RouterProvider in html of App.jsx
+Example:
+return (
+    <div>
+      <RouterProvider router={router} />
+    </div>
+  )
+
+4) In Home.jsx import the Link
+Example:
+1) import { Link } from "react-router-dom"
+
+5) Call the Course Page in Html 
+Example:
+return (
+        <>
+            <h1>Home</h1>
+            <Link to="/course">Course</Link>
+
+        </>
+    )
+
+6) In Course.jsx import the Link
+Exmaple:
+import { Link } from "react-router-dom"
+
+7) Call the HomePage in Html
+Example:
+return (
+        <>
+            <h1>Course</h1>
+            <Link to="/">Home</Link>
+        </>
+    )
+
+8) The user feel advantage is the page is not loading or refreshing.
+
+
+***Step-5******
+1) To make menus as component.
+2) Create a folder name components
+3) Create a Navigation.jsx file
+   Example:
+   const Navigation = () => {
+    return (
+        <>
+        </>
+
+    )
+}
+export default Navigation
+
+4) In Navigation.jsx file import Link 
+Example:
+import { Link } from "react-router-dom"
+
+5) In Navigation.jsx call the home and course linkes in html tags
+Example:
+return (
+        <>
+        <Link to="/">Home</Link><br />
+        <Link to="/course">Course</Link>
+
+        </>
+
+    )
+
+  *****Step-6******
+  1) Create Root.jsx file in Comoponents folder.
+  2) Import Outlet And Navigation in Root.jsx
+    Example:
+    import { Outlet } from "react-router-dom" 
+    import Navigation from "./Navigation"
+3) Call the Outlet and Navigation in HTML tags 
+   Example:
+   return (
+        <>
+        <Navigation/>
+        <Outlet/>
+        </>
+    )
+
+  4) In App.jsx import the Root
+  Example:
+  import Root from "./components/Root";
+
+  5) In App.jsx call the Root in router variable
+  Example:
+const router = createBrowserRouter([
+  {
+    path: "/", element: <Root />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/course", element: <Course /> }
+    ]
+  }
+])
+
+*****Step-7*******
+1) To handle the Custom Error Page to show to the user.
+2) Create Error.jsx in pages folder
+Example:
+const Error = () => {
+    return (
+        <>
+            <h1>Page does not Exist</h1>
+        </>
+    )
+}
+export default Error
+
+3) Import the Error.jsx file into App.jsx
+Exmaple:
+import Error from "./pages/Error";
+
+4) Call the Error.jsx file into to App.jsx in router variable
+Example:
+const router = createBrowserRouter([
+  {
+    path: "/", element: <Root />,
+    errorElement: <Error/>,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/course", element: <Course /> }
+    ]
+  }
+])
+

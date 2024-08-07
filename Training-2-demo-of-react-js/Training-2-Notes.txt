@@ -1,0 +1,161 @@
+*****Step: 1*****
+  ReactJS is open source Javascript library, maintained by Facebook team
+  ReactJS is a kind framework
+  ReactJS is used for developing the Frontend big application.
+  ReactJS is very popular among the developers.
+
+
+****Step:-2********
+JavaScript: 
+1) Javascript is imperative Style
+2) Developer has to give instuctions step by step
+
+
+
+ReactJS :
+1)ReactJS is a declartive style
+2)ReactJS developer has to  just declare
+3) it creates Main.jsx and App.jsx
+
+*****Step-3*****
+ReactJS Instalastions
+1) Create React App: Developed by Facebook team
+2) Vite: App Building tool with modern development method.
+3) Download and install VS Code  https://nodejs.org/en/download/
+4) node js is runtime javascript environment. To install the npm packages
+3) Open the Terminal using Control BackTick (`)
+4) write a command "npm create vite@latest" in the terminal.
+    a) √ Select a framework: » React
+    b)√ Project name: ... client
+    c)√ Select a variant: » JavaScript
+
+5) Its created client folder in the Training-2 
+
+6) Inside client to its created public folder, src folder, and index.html
+
+7) To run this application in the browser :
+   a) cd client  (to go inside the client folder)
+   b) npm install
+   c) npm run dev
+   d) it gives the url to run in the browser =  ➜  Local:   http://localhost:5173/
+
+8) Explaining the Stucture of ReactJS.
+   a) its created index.html
+   b) In index.html , calling main.jsx
+   c) In main.jsx, calling App.jsx  (ReactJS is a component based).
+   d) In App.jsx :
+     a) first part is Import
+     b) Javascript
+     c) return html
+     d) export
+
+9)  Structure of App.jsx , importing the App.css, writing javascript funcion and displaying in html return.
+    Example :
+        import './App.css'
+
+        function App() {
+          let a = 10;
+
+          return (
+            <>
+            <h1>The value of a : {a}</h1>
+            </>
+          )
+        }
+
+        export default App
+
+10) If we are writing javascript function 
+
+Example: 
+import './App.css'
+
+function App() {
+  let a = 100;
+
+  const valueCall = () => {
+    console.log("a:", a)
+  }
+
+  valueCall();
+
+   
+  return (
+    <>
+     <h1>The value of a : {a}</h1>
+    </>
+  )
+}
+
+********Step-3*******************
+Calling One Component from another
+a) Make a new component  
+   i) define the compoent example :
+   const Demo = () => {
+    return <>
+        <h1>I am Demo</h1>
+    </>
+
+    ii) Export the component name , example :
+    export default Demo
+
+  b) Call component in another component.
+    i) Import the Demo.jsx component in App.jsx Example:
+    import Demo from './Demo'
+
+    ii) Call the Component name in Return of App.jsx , Example :
+     return (
+    <>
+     <Demo/> 
+     
+    </>
+  )
+
+********Step-4*******************
+a) Properties (Props) : Properties is used to send data from one component to another component.
+   Example : Refer props.jpg
+b) We are defining the object in App.jsx in Javascript 
+Example  :
+   
+   const obj = {
+    title: "React JS Course",
+    duration: 3,
+    language: "English"
+  }
+
+  c) Calling the Demo.jsx and sending the object in Demo.jsx. Always use Curly Braces "{}" 
+      to pass a javascript values or function
+  Example:
+  <Demo message={obj} /> 
+
+
+********Step-5*******************
+a) Reading the Props in Child Component Demo.jsx
+Example :
+const Demo = (props) => {
+    
+    return <>
+        <h1>I am Demo</h1>
+        <p>Title : {props.message.title}</p>
+        <p>Duration:{props.message.duration}</p>
+        <p>Language:{props.message.language}</p>
+    </>
+
+}
+
+
+
+**********************************
+
+
+
+
+
+
+
+
+
+
+
+
+

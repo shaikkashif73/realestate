@@ -1,0 +1,126 @@
+***Step-1***
+1)npm create vite@latest
+2) cd client
+   npm install
+   npm run dev
+
+3) Removed unnecessary code from App.jsx
+
+***Step-2***
+1) Create the components folder
+2) Create Dashboard.jsx,User.jsx,UserCard.jsx under components folder
+3) Call Dashboard into App.jsx
+4) Call User.jsx into Dashboard.jsx
+5) call UserCard.jsx into User.jsx
+6) Import the Dashboard.css in Dashboard.jsx
+7) Import the UserCard.css in UserCard.jsx
+
+
+****Step-3******
+1) Declare user Variable with Data in App.jsx
+Example:
+  const user = {
+    name:"john",
+    email:"john@gmail.com",
+    age: 30
+  }
+2) In App.jsx passing user data as props to Dashboard.
+Example:
+return (
+    <>
+      <Dashboard user={user} />
+    </>
+  )
+3) In Dashboard.jsx reading user as props and passing the props to User.jsx
+Example:
+a) const Dashboard = ({user}) => {
+b)return (
+        <div>
+        <User user={user}/>
+        </div>
+    )
+3) In User.jsx reading user as props and passing the props to UserCard.jsx
+Example:
+a) const User = ({user}) => {
+b)return (
+        <div>
+        <UserCard user={user}/>
+        </div>
+
+4) In UserCard.jsx reading user props and displaying in html tags.
+Example:
+a) const UserCard = ({user}) => {
+b) return (
+        <div className="user-card">
+        <h3>User Card</h3>
+        <p>Name: {user.name}</p>
+        <p>Email: {user.email}</p>
+        <p>Age: {user.age}</p>
+  </div>
+    )
+
+
+
+****Step-3****
+1) Create context folder
+2) Create userContext.jsx
+Example:
+import { createContext } from "react";
+const UserContext = createContext();
+export default UserContext;
+
+3) In UserInfo.jsx declar user object.
+Example:
+const user = {
+        name:"john",
+        email:"john@gmail.com",
+        age: 30
+      }
+4) Create UserInfo.jsx and import UserContext.jsx.
+Example:
+a) import UserContext from "./UserContext"
+
+5) In UserInfo.jsx call UserContext provider
+Example:
+return (
+        <UserContext.Provider value={user}>
+        </UserContext.Provider>
+    )
+
+6) 
+
+7)
+
+***Step-4*****
+1) In App.jsx Import the UserInfo.jsx
+Example:
+import UserInfo from './context/UserInfo'
+
+2) bring Dashboard under the UserInfo in html
+Example:
+return (
+    <UserInfo>
+      <Dashboard  />
+    </UserInfo>
+  )
+   
+
+******Step-5****
+1) In UserCard.jsx import the userContext
+Example:
+import { useContext } from 'react'
+
+2) declare useContext inside the user variable
+Example:
+const user = useContext(UserContext)
+
+3) Display values in html 
+Examaple:
+return (
+        <div className="user-card">
+        <h3>User Card</h3>
+        <p>Name: {user.name}</p>
+        <p>Email: {user.email}</p>
+        <p>Age: {user.age}</p>
+  </div>
+    )

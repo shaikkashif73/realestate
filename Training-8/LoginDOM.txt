@@ -1,0 +1,36 @@
+import { useState } from 'react'
+import './Login.css'
+const Login = () => {
+    const [user, setUser] = useState("")
+    const [pass, setPass] = useState("");
+    const handleForm = (e) => {
+        e.preventDefault()
+        const userName = document.querySelector('#username').value;
+        const passWord = document.querySelector('#password').value;
+
+        setUser(userName);
+        setPass(passWord);
+        console.log("username", user);
+        console.log("password", pass);
+    }
+    return (
+        <div className='login-container'>
+            <h2>Login</h2>
+            <form onSubmit={handleForm}>
+                <div className='form-group'>
+                    <label htmlFor="username">User Name</label>
+                    <input type="text" name='userame' required id='username' />
+                </div>
+                <div className='form-group'>
+                    <label htmlFor="password">Pass Word</label>
+                    <input type="password" name="password" required id='password' />
+                </div>
+                <button type='submit'>Login</button>
+
+            </form>
+
+        </div>
+    )
+}
+
+export default Login 

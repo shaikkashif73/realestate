@@ -1,0 +1,118 @@
+*****Step-1******
+1) npm create vite@latest
+2)  cd client
+    npm install
+    npm run dev
+3) Remove all content from App.jsx file
+    Example :
+    import './App.css'
+        function App() {
+        return (
+            <>
+            
+            </>
+        )
+        }
+
+        export default App
+
+4) Copy and overwrite the App.css
+
+****Step 2******
+1) Add card-container and card divs in App.jsx
+  Example :
+  <div className='card-container'>
+        <div className='card'>
+          <h1>Title: Card 1</h1>
+          <p>Content: Content 1</p>
+        </div>
+        
+
+      </div>
+
+  2) You can add multiple cards manually by just copy and paste, but its not a good practice
+  Example:
+     <div className='card'>
+          <h1>Title: Card 1</h1>
+          <p>Content: Content 1</p>
+        </div>
+        <div className='card'>
+          <h1>Title: Card 2</h1>
+          <p>Content: Content 2</p>
+        </div>
+
+3) Another way to add multiple cards, we can use array method.
+  Example :
+
+  const cards = [
+    { id: 1, title: "Card 1", content: "Content for Card 1" },
+    { id: 2, title: "Card 2", content: "Content for Card 2" },
+    { id: 3, title: "Card 3", content: "Content for Card 3" },
+    { id: 4, title: "Card 4", content: "Content for Card 4" },
+    { id: 5, title: "Card 5", content: "Content for Card 5" },
+    { id: 6, title: "Card 6", content: "Content for Card 6" },
+  ]
+
+  4) To show the card one by one in the html section , we must use cards.map function (its a loop)
+  Example :
+  return (
+    <>
+      <div className='card-container'>
+
+        {cards.map((card) => {
+          return (<div key={card.id} className='card'>
+            <h1>{card.title}</h1>
+            <p>{card.content}</p>
+          </div>
+          );
+        })}
+      </div>
+    </>
+
+****Step 3******
+1) To make coding more optimize, we will create Card.jsx component.
+2) And Pass data from one component App.jsx to another component Card.jsx
+3) Example Add in Card.jsx , and the props like title and content
+   const Card = ({title, content}) => {
+    return (
+        <div className='card'>
+            <h1>{title}</h1>
+            <p>{content}</p>
+          </div>
+    )
+}
+4) In App.jsx call the import and call the Card.jsx and pass the properties values 
+   Example :
+   <div className='card-container'>
+
+        {cards.map((card) => {
+          return (
+            <Card key={card.id} title={card.title} content={card.content}/>
+          );
+        })}
+      </div>
+
+
+
+****Step******
+1) Add one Button as Card Generator
+Example :
+<button onClick={cardGenerator}>Card Generator</button>
+
+2) Add a new function Name = cardGenerator and push object in the cards array.
+Example :
+const cardGenerator = () => {
+     let id = cards.length + 1;
+     let objCard = {
+       id: id,
+       title : "Card " + id,
+       content: "Content for Card " + id
+     }
+     cards.push(objCard);
+     console.log("button Total Count :", cards.length);
+
+  }
+
+  
+
+**************************************

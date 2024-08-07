@@ -1,0 +1,68 @@
+*****Step-1****
+1) Create New Project
+   Example :
+   npm create vite@latest
+
+*****Step-2****
+1) Create ParentComponent.jsx and ParentComponent.css
+2) Create ChildComponent.jsx and ChildComponent.css
+
+*****Step-3*****
+1) call the ChildComponent in ParentComponent
+2) In ChildComponent.jsx added the input box and button
+   Example :
+   <div className='child-component'>
+            <h1>Child-Component</h1>
+            <p>Change event Data: {data} </p>
+            <input type="text" value={data}
+                onChange={(e) => setData(e.target.value)}
+            />
+            <button>Send Data</button>
+        </div>
+
+3) Declared & Set useState in the top of the function.
+   Example:
+   const [data, setData] = useState('No Data')
+
+4) written change event function with input box 
+   Example :
+   <input type="text" value={data}
+                onChange={(e) => setData(e.target.value)}
+            />
+
+5) We are displaying the Change Event in <p> tag.
+   Example :
+   <p>Change event Data: {data} </p>
+
+********Step-4********
+1) In ParentComponent.jsx , write a parentFunction and setChidlData by using the useState
+ Example :
+ const parentFunction = (dataByChild) => {
+    setChildData(dataByChild)
+   }
+
+2) Declare useState for childData in ParentComponent.jsx
+   Example : 
+   const [childData, setChildData] = useState("No Data");
+
+3) Send parentFunction as Props (Properties) through ChildComponent.
+Example :
+<ChildComponent parentFunction={parentFunction}/>
+
+4) In Child Component define parentFuction as Props 
+Example :
+const ChildComponent = ({parentFunction}) => {
+
+5) Set the parentFunction value in sendDataToParent
+Example:
+const sendDataToParent = () => {
+        parentFunction(data);
+    }
+
+5) Type Some Data in Input box and Click button.
+  Example :
+    Kashif and click send data
+
+
+
+

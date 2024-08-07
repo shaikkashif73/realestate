@@ -1,0 +1,155 @@
+*******Step-1**************
+1) npm create vite@latest
+2) Removed un-used code from App.jsx
+Example:
+
+import './App.css'
+
+function App() {
+   return (
+    <>
+      <h1>app</h1>
+    </>
+  )
+}
+export default App
+
+*************Step-2*****
+1) We are going to use the Form in React.
+2) Create the Login.jsx 
+3) Create the Login.css and copy the sample code of css.
+4) Create a page using the Form.
+ Example:
+  return (
+        <div className='login-container'>
+            <h2>Login</h2>
+            <form>
+                <div className='form-group'>
+                    <label htmlFor="username">User Name</label>
+                    <input type="text" name='userame' required />
+                </div>
+                <div className='form-group'>
+                    <label htmlFor="password">Pass Word</label>
+                    <input type="text" name="password" required />
+                </div>
+                <button type='submit'>Login</button>
+            </form>
+        </div>
+    )
+
+    5) In Login.jsx , Add the handleForm function
+    Example:
+const handleForm = (e) => {
+
+    }
+
+    6) Call the handleForm function in form level html.
+    Example:
+     <form onSubmit={handleForm}>
+
+
+     7) As soon as we click login button, The page is getting refreshed.
+
+     8) To stop refreshing the Form. We must add e.preventDefault event in handleForm function.
+     Example:
+        const handleForm = (e) => {
+        e.preventDefault()
+
+     9) To read the values from form input boxes like username and password.
+      We must use querySelector of DOM in handleForm function. And We consoled the values also.
+      Example:
+
+      const handleForm = (e) => {
+        e.preventDefault()
+        const userName = document.querySelector('#username').value;
+        const passWord = document.querySelector('#password').value;
+        console.log("username", userName);
+        console.log("password", passWord);
+
+    }
+ 
+     
+****Step-3******Change EventMethod for Forms*******
+
+1) copy the design from LoginTemp.txt and paste in Login.jsx
+2) Import useState and Declare in Login.jsx
+    Example:
+    const Login = () => {
+
+    const [user, setUser] = useState("")
+    const [pass, setPass] = useState("")
+
+3) Add the Change Event Functions for user and password ans set the useState and console log
+   Example :
+   const handleUser = (e) => {
+        console.log("user", e.target.value);
+        setUser(e.target.value)
+    }
+
+    const handlePass = (e) => {
+        console.log("pass", e.target.value);
+        setPass(e.target.value)
+    }
+
+4) Calling the Event Function in Onchange Event in html
+Example:
+a) <input  type="text" name="username" required onChange={handleUser}/>
+b) <input  type="text" name="password" required onChange={handlePass}/>
+
+5) Add a handleForm function 
+Example:
+const handleForm = (e) => {
+        e.preventDefault()
+        
+    }
+
+6) Call thie handleForm funcion on onSubmit Event of Form.
+Example:
+<form onSubmit={handleForm}>
+
+7) Then console or bring alert of  user and password in handleForm function
+Example:
+const handleForm = (e) => {
+        e.preventDefault()
+        console.log("user", user)
+        console.log("pass", pass)
+        alert("user : " + user + " , Pass : " + pass)
+    }
+
+****Step-4******useRef Method with Forms*******
+1) Import useRef in Login.jsx
+Example:
+import { useRef } from "react";
+
+2) Define useRef in Login.jsx
+Example:
+const nameRef = useRef(null)
+    const passRef = useRef(null)
+
+3) Add the handleForm function 
+const handleForm = (e) => {
+        e.preventDefault()
+        
+    }
+
+4) Call the handleForm function in form onSubmit event
+Example:
+<form onSubmit={handleForm}>
+
+5) define in html input text box as ref={nameRef}.
+Example:
+ <input
+                        type="text"
+                        name="username"
+                        required
+                        ref={nameRef}
+                    />
+
+6) Capture and Console useRef Variable in handleForm Function.
+Example:
+const handleForm = (e) => {
+        e.preventDefault()
+        console.log("user",nameRef.current.value)
+        console.log("pass", passRef.current.value)
+
+    }
